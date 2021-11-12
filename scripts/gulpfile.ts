@@ -1,11 +1,13 @@
 import { resolve } from "path";
 import { series } from "gulp";
 
-import { cleanPlayground, npmInit } from "./playground/playground";
+import { Playgorund } from "./playground";
 
 const ROOT_PATH = resolve(process.cwd(), "..");
 
-export default series(
-  cleanPlayground({ root: ROOT_PATH }),
-  npmInit({ root: ROOT_PATH })
-);
+const { cleanPlayground, npmInit, installModule } = new Playgorund({
+  root: ROOT_PATH,
+  module: "glamor",
+});
+
+export default series(cleanPlayground, npmInit, installModule);

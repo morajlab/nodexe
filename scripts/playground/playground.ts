@@ -1,29 +1,27 @@
-import { exec } from "child_process";
-import { resolve } from "path";
+import { execSync } from "child_process";
+import { resolve, join } from "path";
 import * as del from "del";
+import type { IPlaygroundProps } from "./playground.types";
 
-const _directory = "playground";
+export class Playgorund {
+  private directory: string;
+  private root: string;
+  private module: string;
 
-export const cleanPlayground =
-  ({ root, directory = _directory }: { root: string; directory?: string }) =>
-  async () =>
+  constructor({ root, module, directory }: IPlaygroundProps) {
+    this.root = root;
+    this.module = module;
+    this.directory = resolve(root, directory ?? "playground");
+  }
+
+  cleanPlayground = async () =>
     del(
-      [
-        resolve(root, `${directory}/**/*`),
-        `!${resolve(root, `${directory}/.gitkeep`)}`,
-      ],
+      [join(this.directory, "**/*"), `!${join(this.directory, ".gitkeep")}`],
       { force: true }
     );
 
-export const npmInit =
-  ({ root, directory = _directory }: { root: string; directory?: string }) =>
-  async (cb: Function) => {
-    exec(
-      `cd ${resolve(root, directory)} && npm init -y`,
-      (err, stdout, stderr) => {
-        cb(err);
-        cb(stderr);
-        cb(stdout);
-      }
-    );
-  };
+  npmInit = async () => execSync(`cd ${this.directory} && npm init -y`);
+
+  installModule = async () =>
+    execSync(`cd ${this.directory} && npm i ${this.module}`);
+}
