@@ -1,6 +1,6 @@
 import { execSync } from "child_process";
 import { resolve, join } from "path";
-import * as del from "del";
+import del from "del";
 import type { IPlaygroundProps } from "./playground.types";
 
 export class Playgorund {
