@@ -1,26 +1,21 @@
-import { Injectable } from "@nestjs/common";
-import { spawn } from "child_process";
+import { join } from "path";
+import { createReadStream } from "fs";
+import { Injectable, StreamableFile } from "@nestjs/common";
+import { spawnSync } from "child_process";
 
 @Injectable()
 export class API_V1_Service {
-  install_module(module: string): string {
-    const child = spawn("npm", ["run", "gulp", "--", "--module", module]);
-
-    child.stdout.setEncoding("utf8");
-    child.stderr.setEncoding("utf8");
-
-    child.stdout.on("data", (chunk) => {
-      console.log(chunk);
+  async getExecutable(module: string): Promise<StreamableFile | string> {
+    const child = spawnSync("npm", ["run", "gulp", "--", "--module", module], {
+      encoding: "utf8",
     });
 
-    child.stderr.on("data", (error) => {
-      console.log(error);
-    });
+    if (child.error) {
+      return child.error.message;
+    }
 
-    child.on("close", (code) => {
-      console.log(`child process exited with code ${code}`);
-    });
+    const file = createReadStream(join(process.cwd(), "playground", module));
 
-    return `API Controller ${module}`;
+    return new StreamableFile(file);
   }
 }
