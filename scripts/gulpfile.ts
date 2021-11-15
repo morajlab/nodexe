@@ -5,6 +5,7 @@ import { hideBin } from "yargs/helpers";
 
 // Tasks
 import { Playgorund } from "./playground";
+import { Nexe } from "./nexe";
 
 const { argv } = yargs(hideBin(process.argv));
 
@@ -17,12 +18,20 @@ if (
 }
 
 const ROOT_PATH = resolve(process.cwd(), "..");
+const MODULE = (argv["module"] ?? "").toString();
 
 const { cleanPlayground, npmInit, installModule } = new Playgorund({
   root: ROOT_PATH,
-  module: (argv["module"] ?? "").toString(),
+  module: MODULE,
 });
 
-export { cleanPlayground, npmInit, installModule };
+const { compile } = new Nexe({
+  root: ROOT_PATH,
+  module: MODULE,
+  targets: ["linux-x64-14.15.3"],
+  input: "lib/bin.js",
+});
 
-export default series(cleanPlayground, npmInit, installModule);
+export { cleanPlayground, npmInit, installModule, compile };
+
+export default series(cleanPlayground, npmInit, installModule, compile);

@@ -1,17 +1,10 @@
 import { Injectable } from "@nestjs/common";
-import { spawn, spawnSync } from "child_process";
+import { spawn } from "child_process";
 
 @Injectable()
 export class API_V1_Service {
   install_module(module: string): string {
-    const dirName = "playground";
-
-    spawnSync("rm", ["-rf", `./${dirName}`]);
-    spawnSync("mkdir", [dirName]);
-    spawnSync("cd", [`./${dirName}`]);
-    spawnSync("npm", ["init", "-y"]);
-
-    const child = spawn("npm", ["install", module]);
+    const child = spawn("npm", ["run", "gulp", "--", "--module", module]);
 
     child.stdout.setEncoding("utf8");
     child.stderr.setEncoding("utf8");
@@ -25,13 +18,6 @@ export class API_V1_Service {
     });
 
     child.on("close", (code) => {
-      if (code == 0) {
-        const glamor = spawn("npx", ["glamor", "--help"]);
-
-        glamor.stdout.on("data", (data) => {
-          console.log(data.toString());
-        });
-      }
       console.log(`child process exited with code ${code}`);
     });
 
