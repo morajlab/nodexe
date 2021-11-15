@@ -41,3 +41,5 @@ Thumbs.db
 # API app
 apps/api/playground/**/*
 !apps/api/playground/.gitkeep
+playground/**/*
+!playground/.gitkeep
