@@ -20,6 +20,11 @@ export class Playgorund {
 
   npmInit = async () => execSync(`cd ${this.directory} && npm init -y`);
 
-  installModule = async () =>
+  installModule = async () => {
+    if (!this.module) {
+      throw new Error("module name not found !");
+    }
+
     execSync(`cd ${this.directory} && npm i ${this.module}`);
+  };
 }
