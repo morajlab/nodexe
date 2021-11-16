@@ -9,7 +9,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "gulp": "gulp --require=tsconfig-paths/register --gulpfile=./scripts/gulpfile.ts",
+    "gulp": "gulp",
     "format": "prettier --write .",
     "prepare": "husky install"
   },

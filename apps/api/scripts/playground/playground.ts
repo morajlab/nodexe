@@ -1,5 +1,6 @@
 import { execSync } from "child_process";
 import { resolve, join } from "path";
+import { log } from "../log";
 import del from "del";
 import type { IPlaygroundProps } from "./playground.types";
 
@@ -12,19 +13,36 @@ export class Playgorund {
     this.directory = resolve(root, directory ?? "playground");
   }
 
-  cleanPlayground = async () =>
-    del(
-      [join(this.directory, "**/*"), `!${join(this.directory, ".gitkeep")}`],
-      { force: true }
-    );
+  cleanPlayground = async () => {
+    try {
+      del(
+        [join(this.directory, "**/*"), `!${join(this.directory, ".gitkeep")}`],
+        { force: true }
+      );
 
-  npmInit = async () => execSync(`cd ${this.directory} && npm init -y`);
+      log("cleanPlaygroundTask completed successfully", "SUCCESS");
+    } catch (error) {
+      log(error.message, "ERROR");
+    }
+  };
+
+  npmInit = async () => {
+    try {
+      execSync(`cd ${this.directory} && npm init -y`);
+
+      log("npmInitTask completed successfully", "SUCCESS");
+    } catch (error) {
+      log(error.message, "ERROR");
+    }
+  };
 
   installModule = async () => {
-    if (!this.module) {
-      throw new Error("module name not found !");
-    }
+    try {
+      execSync(`cd ${this.directory} && npm i ${this.module}`);
 
-    execSync(`cd ${this.directory} && npm i ${this.module}`);
+      log("installModuleTask completed successfully", "SUCCESS");
+    } catch (error) {
+      log(error.message, "ERROR");
+    }
   };
 }

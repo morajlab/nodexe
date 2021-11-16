@@ -1,4 +1,5 @@
 import { resolve, join } from "path";
+import { log } from "../log";
 import { compile as nexeCompile } from "nexe";
 import type { INexeProps } from "./nexe.types";
 
@@ -21,10 +22,17 @@ export class Nexe {
     this.input = join(directory, "node_modules", module, input);
   }
 
-  compile = async () =>
-    await nexeCompile({
-      input: this.input,
-      output: this.output,
-      targets: this.targets,
-    });
+  compile = async () => {
+    try {
+      await nexeCompile({
+        input: this.input,
+        output: this.output,
+        targets: this.targets,
+      });
+
+      log("compileTask completed successfully", "SUCCESS");
+    } catch (error) {
+      log(error.message, "ERROR");
+    }
+  };
 }

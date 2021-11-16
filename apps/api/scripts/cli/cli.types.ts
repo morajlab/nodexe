@@ -1,8 +1,6 @@
-export interface ICliProps {
-  argv: string[];
-  options: { [key: string]: string[] };
-}
-
-export interface ICheckArgsProps {
-  task?: string;
+export interface ITaskProps {
+  name: string;
+  task: () => Promise<any>;
+  description?: string;
+  options?: { [key: string]: string };
 }

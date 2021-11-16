@@ -1,39 +1,52 @@
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
-import { bgRed } from "chalk";
-import type { ICheckArgsProps, ICliProps } from "./cli.types";
+import { log } from "../log";
+import type { ITaskProps } from "./cli.types";
 // import { scriptName } from "yargs";
 
 export class Cli {
   private argv: any;
-  private options: ICliProps["options"];
 
-  constructor({ options, argv }: ICliProps) {
-    this.options = options;
+  constructor(argv: string[]) {
     this.argv = yargs(hideBin(argv)).argv;
   }
 
   getArgs = (name?: string) =>
     name ? (this.argv[name] ?? "").toString() : this.argv;
 
-  checkArgs = ({ task }: ICheckArgsProps = {}) => {
-    let result: boolean | (() => Promise<void>) = true;
+  checkArgs = (tasks: ITaskProps[]): { [key: string]: () => Promise<any> } => {
+    const result = {};
 
-    Object.values(task ? [this.options[task]] : this.options).forEach(
-      (opts) => {
-        opts.forEach((opt) => {
-          if (!this.getArgs(opt.replace("--", ""))) {
-            result = (async () => {
-              console.log();
-              console.log(bgRed(`ERROR: option ${opt} is not defined !`));
-              console.log();
-            })() as any;
+    for (const { name, task, description, options } of Object.values(tasks)) {
+      let taskObject = { [name]: task };
+      let lostOpts: string[] = [];
 
-            return;
-          }
-        });
+      if (options) {
+        lostOpts = Object.keys(options).filter(
+          (opt) => !this.getArgs(opt.replace("--", ""))
+        );
       }
-    );
+
+      if (lostOpts.length > 0) {
+        taskObject = {
+          [name]: async () => {
+            lostOpts.forEach((opt) =>
+              log(`option "${opt}" is not defined for "${name}"`, "ERROR")
+            );
+          },
+        };
+      }
+
+      if (description) {
+        (taskObject[name] as any).description = description;
+      }
+
+      if (options) {
+        (taskObject[name] as any).flags = options;
+      }
+
+      Object.assign(result, taskObject);
+    }
 
     return result;
   };

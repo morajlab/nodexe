@@ -1,2 +1,2 @@
 export * from "./cli";
-export type { ICheckArgsProps, ICliProps } from "./cli.types";
+export type { ITaskProps } from "./cli.types";
