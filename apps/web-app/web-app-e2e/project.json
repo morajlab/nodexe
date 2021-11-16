@@ -1,0 +1,28 @@
+{
+  "root": "apps/web-app/web-app-e2e",
+  "sourceRoot": "apps/web-app/web-app-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/web-app/web-app-e2e/cypress.json",
+        "devServerTarget": "web-app-web-app:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "web-app-web-app:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/web-app/web-app-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["web-app-web-app"]
+}

@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@/apps/web-app/types": ["apps/web-app/web-app/types/index.ts"],
+      "@/apps/web-app/components": ["apps/web-app/web-app/components/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
