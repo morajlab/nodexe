@@ -1,15 +1,14 @@
 import React from "react";
 import { Basic } from "@/apps/web-app/components";
-import { Button } from "@blueprintjs/core";
+import { Button, Input, Navbar } from "@mantine/core";
+import { Search } from "react-feather";
 
 export const Index = () => (
   <Basic>
-    <Button intent="success" text="Example Button" />
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae iste eius
-      exercitationem at dolore delectus vel quaerat voluptates vitae dicta
-      tenetur sint, magni saepe non nesciunt doloribus eos nobis quae.
-    </p>
+    <Navbar>
+      <Navbar.Section>First section</Navbar.Section>
+    </Navbar>
+    <Input icon={<Search />} placeholder="Enter npm package name" />
   </Basic>
 );
 
