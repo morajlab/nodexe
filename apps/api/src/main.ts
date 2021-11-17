@@ -5,12 +5,21 @@
 
 import { Logger } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
-
+import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 import { AppModule } from "./app/app.module";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const port = process.env.PORT || 3333;
+  const config = new DocumentBuilder()
+    .setTitle("Nodexe")
+    .setDescription("Nodexe API")
+    .setVersion("1.0")
+    .addTag("nodexe")
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+
+  SwaggerModule.setup("api/v1", app, document);
 
   await app.listen(port, () => {
     Logger.log("Listening at http://localhost:" + port);
