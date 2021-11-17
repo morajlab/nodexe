@@ -5,10 +5,15 @@ import { API_V1_Service } from "./api_v1.service";
 export class API_V1_Controller {
   constructor(private readonly appService: API_V1_Service) {}
 
-  @Get(":module")
+  @Get("compile/:module")
   async getExecutable(
     @Param("module") module: string
   ): Promise<StreamableFile | string> {
     return await this.appService.getExecutable(module);
+  }
+
+  @Get("targets")
+  getTargets() {
+    return this.appService.getTargets();
   }
 }
