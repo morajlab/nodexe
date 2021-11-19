@@ -8,10 +8,20 @@ import { spawnSync } from "child_process";
 export class ExecService {
   constructor(private readonly httpService: HttpService) {}
 
-  async getExecutable(module: string): Promise<StreamableFile | string> {
-    const child = spawnSync("npm", ["run", "gulp", "--", "--module", module], {
-      encoding: "utf8",
-    });
+  async getExecutable({
+    module,
+    targets,
+  }: {
+    module: string;
+    targets: string[];
+  }): Promise<StreamableFile | string> {
+    const child = spawnSync(
+      "npm",
+      ["run", "gulp", "--", "--module", module, "--targets", targets.join(",")],
+      {
+        encoding: "utf8",
+      }
+    );
 
     if (child.error) {
       return child.error.message;
