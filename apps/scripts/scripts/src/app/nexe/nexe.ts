@@ -1,5 +1,5 @@
 import { resolve, join } from "path";
-import { log } from "../log";
+import { Console } from "@morajlab/vanilla.utils.console";
 import { compile as nexeCompile } from "nexe";
 import type { INexeProps } from "./nexe.types";
 
@@ -30,9 +30,9 @@ export class Nexe {
         targets: this.targets,
       });
 
-      log("compileTask completed successfully", "SUCCESS");
+      Console.success("compileTask completed successfully");
     } catch (error) {
-      log(error.message, "ERROR");
+      Console.error(error.message);
     }
   };
 }

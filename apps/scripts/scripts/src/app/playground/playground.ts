@@ -1,6 +1,6 @@
 import { execSync } from "child_process";
 import { resolve, join } from "path";
-import { log } from "../log";
+import { Console } from "@morajlab/vanilla.utils.console";
 import del from "del";
 import type { IPlaygroundProps } from "./playground.types";
 
@@ -20,9 +20,9 @@ export class Playgorund {
         { force: true }
       );
 
-      log("cleanPlaygroundTask completed successfully", "SUCCESS");
+      Console.success("cleanPlaygroundTask completed successfully");
     } catch (error) {
-      log(error.message, "ERROR");
+      Console.error(error.message);
     }
   };
 
@@ -30,9 +30,9 @@ export class Playgorund {
     try {
       execSync(`cd ${this.directory} && npm init -y`);
 
-      log("npmInitTask completed successfully", "SUCCESS");
+      Console.success("npmInitTask completed successfully");
     } catch (error) {
-      log(error.message, "ERROR");
+      Console.error(error.message);
     }
   };
 
@@ -40,9 +40,9 @@ export class Playgorund {
     try {
       execSync(`cd ${this.directory} && npm i ${this.module}`);
 
-      log("installModuleTask completed successfully", "SUCCESS");
+      Console.success("installModuleTask completed successfully");
     } catch (error) {
-      log(error.message, "ERROR");
+      Console.error(error.message);
     }
   };
 }

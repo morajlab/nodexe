@@ -1,6 +1,6 @@
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
-import { log } from "../log";
+import { Console } from "@morajlab/vanilla.utils.console";
 import type { ITaskProps } from "./cli.types";
 // import { scriptName } from "yargs";
 
@@ -31,7 +31,7 @@ export class Cli {
         taskObject = {
           [name]: async () => {
             lostOpts.forEach((opt) =>
-              log(`option "${opt}" is not defined for "${name}"`, "ERROR")
+              Console.error(`option "${opt}" is not defined for "${name}"`)
             );
           },
         };
