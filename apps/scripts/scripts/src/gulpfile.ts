@@ -1,9 +1,5 @@
 import { series } from "gulp";
-import { Cli, ITaskProps } from "./cli";
-
-// Tasks
-import { Playgorund } from "./playground";
-import { Nexe } from "./nexe";
+import { Cli, ITaskProps, Playgorund, Nexe } from "./app";
 
 const { getArgs, checkArgs } = new Cli(process.argv);
 

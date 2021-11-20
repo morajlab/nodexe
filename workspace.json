@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "scripts-scripts": "apps/scripts/scripts",
     "web-app-web-app": "apps/web-app/web-app",
     "web-app-web-app-e2e": "apps/web-app/web-app-e2e"
   }

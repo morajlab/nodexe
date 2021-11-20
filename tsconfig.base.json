@@ -16,8 +16,8 @@
     "esModuleInterop": true,
     "baseUrl": ".",
     "paths": {
-      "@/apps/web-app/types": ["apps/web-app/web-app/types/index.ts"],
-      "@/apps/web-app/components": ["apps/web-app/web-app/components/index.ts"]
+      "@/apps/web-app/components": ["apps/web-app/web-app/components/index.ts"],
+      "@/apps/web-app/types": ["apps/web-app/web-app/types/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
