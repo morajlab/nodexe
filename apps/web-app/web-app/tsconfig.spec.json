@@ -4,7 +4,8 @@
     "outDir": "../../../dist/out-tsc",
     "module": "commonjs",
     "types": ["jest", "node"],
-    "jsx": "react"
+    "jsx": "react",
+    "isolatedModules": false
   },
   "include": [
     "**/*.test.ts",

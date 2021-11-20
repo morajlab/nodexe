@@ -1,15 +1,18 @@
-import React from "react";
-import { Basic } from "@/apps/web-app/components";
-import { Button, Input, Navbar } from "@mantine/core";
-import { Search } from "react-feather";
+import React, { useState } from "react";
+import { AppShell, Overview, Steps } from "@/apps/web-app/components";
 
-export const Index = () => (
-  <Basic>
-    <Navbar>
-      <Navbar.Section>First section</Navbar.Section>
-    </Navbar>
-    <Input icon={<Search />} placeholder="Enter npm package name" />
-  </Basic>
-);
+export const Index = () => {
+  const [view, setActiveView] = useState("overview");
+
+  return (
+    <AppShell>
+      {view === "overview" ? (
+        <Overview startOnClick={() => setActiveView("steps")} />
+      ) : (
+        <Steps />
+      )}
+    </AppShell>
+  );
+};
 
 export default Index;
