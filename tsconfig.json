@@ -1,8 +1,3 @@
 {
-  "extends": "./tsconfig.base.json",
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  }
+  "extends": "./node_modules/@morajlab/config.typescript/ts-node.json"
 }

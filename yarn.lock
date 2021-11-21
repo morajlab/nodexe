@@ -1748,6 +1748,11 @@
     clsx "^1.1.1"
     csstype "^3.0.9"
 
+"@morajlab/config.typescript@^0.0.102":
+  version "0.0.102"
+  resolved "https://node.bit.dev/@morajlab/config.typescript/-/@morajlab-config.typescript-0.0.102.tgz#707d519978cd5a293bd34ea38364f3ae9a3ff56f"
+  integrity sha1-cH1RmXjNWik7006jg2Tzrpo/9W8=
+
 "@morajlab/react.components.bare@^0.0.111":
   version "0.0.111"
   resolved "https://node.bit.dev/@morajlab/react.components.bare/-/@morajlab-react.components.bare-0.0.111.tgz#6d2a053a7d8ad755897368f2c1c9271eaa44bdc4"

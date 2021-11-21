@@ -1,2 +1,2 @@
-export * from "../apps/api/scripts/gulpfile";
-export { default } from "../apps/api/scripts/gulpfile";
+export * from "../apps/scripts/scripts/src/gulpfile";
+export { default } from "../apps/scripts/scripts/src/gulpfile";
