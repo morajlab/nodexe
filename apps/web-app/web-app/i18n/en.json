@@ -1,4 +1,10 @@
 {
   "nodexe": "nodexe",
-  "overview-title": "This is overview title"
+  "overview-title": "This is overview title",
+  "step-1-label": "Fist step",
+  "step-2-label": "Second step",
+  "step-3-label": "Final step",
+  "step-1-desc": "Upload a node module",
+  "step-2-desc": "Set compilation settings",
+  "step-3-desc": "Compile and download binary"
 }

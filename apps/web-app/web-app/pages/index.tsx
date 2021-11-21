@@ -5,12 +5,9 @@ export const Index = () => {
   const [view, setActiveView] = useState("overview");
 
   return (
-    <AppShell>
-      {view === "overview" ? (
-        <Overview startOnClick={() => setActiveView("steps")} />
-      ) : (
-        <Steps />
-      )}
+    <AppShell view={view}>
+      <Overview startOnClick={() => setActiveView("steps")} key="overview" />
+      <Steps key="steps" />
     </AppShell>
   );
 };

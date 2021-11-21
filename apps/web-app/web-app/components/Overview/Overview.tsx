@@ -1,5 +1,4 @@
-import { Bare } from "@/apps/web-app/components";
-import { Button, Title, Text, Center } from "@mantine/core";
+import { Button, Title, Text, Center, Group } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import type { OverviewComponent } from "./Overview.types";
 
@@ -9,8 +8,8 @@ export const Overview: OverviewComponent = ({ startOnClick, ...rest }) => {
   const { t } = useTranslation();
 
   return (
-    <Bare {...rest}>
-      <Center>
+    <Center {...rest}>
+      <Group direction="column">
         <Text weight={700} transform="capitalize">
           {t("nodexe")}
         </Text>
@@ -22,8 +21,8 @@ export const Overview: OverviewComponent = ({ startOnClick, ...rest }) => {
         >
           Getting Started
         </Button>
-      </Center>
-    </Bare>
+      </Group>
+    </Center>
   );
 };
 

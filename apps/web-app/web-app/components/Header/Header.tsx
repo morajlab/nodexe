@@ -5,6 +5,7 @@ import {
   Group,
   Text,
   Badge,
+  Button,
 } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import { GitHub } from "react-feather";
@@ -29,6 +30,12 @@ export const Header: HeaderComponent = ({ ...rest }) => {
           <Badge color="gray">v0.0.1</Badge>
         </Group>
         <Group>
+          <Button compact variant="light">
+            Overview
+          </Button>
+          <Button compact variant="light">
+            API
+          </Button>
           <ActionIcon variant="filled" radius="xl" size="lg">
             <GitHub size={18} />
           </ActionIcon>
