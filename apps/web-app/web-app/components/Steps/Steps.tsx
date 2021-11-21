@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Bare } from "@/apps/web-app/components";
+import { Bare, Dropzone } from "@/apps/web-app/components";
 import { Stepper, Button, Group } from "@mantine/core";
 import type { StepsComponent } from "./Steps.types";
 
@@ -18,7 +18,7 @@ export const Steps: StepsComponent = ({ ...rest }) => {
     <Bare {...rest}>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm">
         <Stepper.Step label={t("step-1-label")} description={t("step-1-desc")}>
-          Step 1 content: Create an account
+          <Dropzone />
         </Stepper.Step>
         <Stepper.Step label={t("step-2-label")} description={t("step-2-desc")}>
           Step 2 content: Verify email
