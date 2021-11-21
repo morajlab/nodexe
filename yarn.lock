@@ -1748,6 +1748,11 @@
     clsx "^1.1.1"
     csstype "^3.0.9"
 
+"@morajlab/config.prettier@^0.0.1":
+  version "0.0.1"
+  resolved "https://node.bit.dev/@morajlab/config.prettier/-/@morajlab-config.prettier-0.0.1.tgz#861096c94b0962277ba95d7c4491e73ccd2c3ed7"
+  integrity sha1-hhCWyUsJYid7qV18RJHnPM0sPtc=
+
 "@morajlab/config.typescript@^0.0.102":
   version "0.0.102"
   resolved "https://node.bit.dev/@morajlab/config.typescript/-/@morajlab-config.typescript-0.0.102.tgz#707d519978cd5a293bd34ea38364f3ae9a3ff56f"
