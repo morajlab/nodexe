@@ -29,7 +29,7 @@
     "serve": {
       "executor": "@nrwl/node:execute",
       "options": {
-        "buildTarget": "scripts-scripts:build"
+        "buildTarget": "scripts:build"
       }
     },
     "lint": {

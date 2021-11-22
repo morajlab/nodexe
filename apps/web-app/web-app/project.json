@@ -19,21 +19,20 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          {
-            "command": "make hello"
-          }
-        ]
+          "npx nx run web:postserve --port=$(cat ./nodexe.json | npx json development.web:port)"
+        ],
+        "parallel": false
       }
     },
     "postserve": {
       "executor": "@nrwl/next:server",
       "options": {
-        "buildTarget": "web-app-web-app:build",
+        "buildTarget": "web:build",
         "dev": true
       },
       "configurations": {
         "production": {
-          "buildTarget": "web-app-web-app:build:production",
+          "buildTarget": "web:build:production",
           "dev": false
         }
       }
@@ -41,7 +40,7 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "web-app-web-app:build:production"
+        "buildTarget": "web:build:production"
       }
     },
     "test": {

@@ -7,6 +7,7 @@ import { Logger, VersioningType } from "@nestjs/common";
 import { NestFactory } from "@nestjs/core";
 import { SwaggerModule, DocumentBuilder } from "@nestjs/swagger";
 import { AppModule } from "./app/app.module";
+import nodexeConfig from "../../../nodexe.json";
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,7 +18,8 @@ async function bootstrap() {
   });
   app.setGlobalPrefix("api");
 
-  const port = process.env.PORT || 3333;
+  const port =
+    nodexeConfig?.development?.["api:port"] || process.env.PORT || 3333;
   const config = new DocumentBuilder()
     .setTitle("Nodexe")
     .setDescription("Nodexe API")
