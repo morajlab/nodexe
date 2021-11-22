@@ -19,6 +19,7 @@ export const AppShell: AppShellComponent = ({ view, children, ...rest }) => {
       header={<Header />}
       className={`${styles.root} ${common().solid}`}
       children={activeChild}
+      styles={{ body: { flexGrow: 1 }, main: { display: "flex" } }}
       {...rest}
     />
   );

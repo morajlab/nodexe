@@ -1,10 +1,14 @@
 {
   "nodexe": "nodexe",
+  "or": "OR",
   "overview-title": "This is overview title",
+  "input-package-name": "Enter package name here",
   "step-1-label": "Fist step",
   "step-2-label": "Second step",
   "step-3-label": "Final step",
   "step-1-desc": "Upload a node module",
   "step-2-desc": "Set compilation settings",
-  "step-3-desc": "Compile and download binary"
+  "step-3-desc": "Compile and download binary",
+  "dropzone-label": "Drag package here or click to select files",
+  "dropzone-desc": "Attach as many files as you like, each file should not exceed 5mb"
 }

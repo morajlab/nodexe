@@ -1,9 +1,11 @@
 import { ComponentProps } from "react";
 import {
   Dropzone as MantineDropzone,
+  DropzoneStatus,
   IMAGE_MIME_TYPE,
 } from "@mantine/dropzone";
-import { Group, Text, useMantineTheme } from "@mantine/core";
+import { Group, Text, useMantineTheme, MantineTheme } from "@mantine/core";
+import { useTranslation } from "react-i18next";
 import { Upload, Package, Loader } from "react-feather";
 import type { DropzoneComponent } from "./Dropzone.types";
 
@@ -19,19 +21,19 @@ const ImageUploadIcon = ({ status, ...props }) => {
   return <Package {...props} />;
 };
 
-function getIconColor(status, theme) {
-  return status.accepted
+const getIconColor = (status: DropzoneStatus, theme: MantineTheme) =>
+  status.accepted
     ? theme.colors[theme.primaryColor][6]
     : status.rejected
     ? theme.colors.red[6]
     : theme.colorScheme === "dark"
     ? theme.colors.dark[0]
     : theme.black;
-}
 
 export const Dropzone: DropzoneComponent<
   ComponentProps<typeof MantineDropzone>
 > = ({ ...rest }) => {
+  const { t } = useTranslation();
   const theme = useMantineTheme();
 
   return (
@@ -55,13 +57,12 @@ export const Dropzone: DropzoneComponent<
               color: getIconColor(status, theme),
             }}
           />
-
           <div>
             <Text size="xl" inline>
-              Drag images here or click to select files
+              {t("dropzone-label")}
             </Text>
             <Text size="sm" color="dimmed" inline mt={7}>
-              Attach as many files as you like, each file should not exceed 5mb
+              {t("dropzone-desc")}
             </Text>
           </div>
         </Group>
