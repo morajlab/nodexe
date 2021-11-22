@@ -1,0 +1,12 @@
+.root {
+  z-index: 99;
+  position: absolute;
+  inset: 0;
+}
+
+.content {
+  background-color: #1a1b1e;
+  border: 1px solid #ffa8a8;
+  border-radius: 4px;
+  padding: 10px;
+}

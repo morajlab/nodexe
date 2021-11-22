@@ -2,7 +2,7 @@ import { ComponentProps } from "react";
 import {
   Dropzone as MantineDropzone,
   DropzoneStatus,
-  IMAGE_MIME_TYPE,
+  MIME_TYPES,
 } from "@mantine/dropzone";
 import { Group, Text, useMantineTheme, MantineTheme } from "@mantine/core";
 import { useTranslation } from "react-i18next";
@@ -40,7 +40,8 @@ export const Dropzone: DropzoneComponent<
     <MantineDropzone
       onDrop={console.log}
       maxSize={3 * 1024 ** 2}
-      accept={IMAGE_MIME_TYPE}
+      multiple={false}
+      accept={[MIME_TYPES.zip]}
       {...rest}
     >
       {(status) => (

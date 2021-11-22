@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nodexe",
+  "description": "Nodexe config schema",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "App version"
+    },
+    "name": {
+      "type": "string",
+      "description": "App name"
+    },
+    "repository": {
+      "type": "string",
+      "description": "App repository url"
+    },
+    "website": {
+      "type": "string",
+      "description": "App website url"
+    },
+    "development": {
+      "type": "object",
+      "properties": {
+        "api:port": {
+          "type": "number",
+          "description": "API server port"
+        },
+        "web:port": {
+          "type": "number",
+          "description": "Web server port"
+        }
+      }
+    }
+  },
+  "required": ["version", "name", "repository", "website"]
+}

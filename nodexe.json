@@ -1,0 +1,11 @@
+{
+  "$schema": "./schemas/nodexe.schema.json",
+  "name": "Nodexe",
+  "version": "0.0.1",
+  "repository": "https://github.com/morajlab/nodexe",
+  "website": "https://github.com/morajlab/nodexe",
+  "development": {
+    "api:port": 6666,
+    "web:port": 4200
+  }
+}

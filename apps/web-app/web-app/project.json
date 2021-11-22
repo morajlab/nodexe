@@ -16,6 +16,16 @@
       }
     },
     "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "make hello"
+          }
+        ]
+      }
+    },
+    "postserve": {
       "executor": "@nrwl/next:server",
       "options": {
         "buildTarget": "web-app-web-app:build",
