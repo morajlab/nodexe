@@ -10,7 +10,9 @@
     "build": "nx build",
     "test": "nx test",
     "gulp": "gulp",
-    "format": "prettier --write .",
+    "format": "npm run format:css & npm run format:prettier",
+    "format:prettier": "prettier --write --ignore-unknown .",
+    "format:css": "stylelint **/*.css",
     "prepare": "husky install"
   },
   "private": true,
@@ -98,6 +100,8 @@
     "prettier": "^2.3.1",
     "react-test-renderer": "17.0.2",
     "sass": "1.43.2",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
     "ts-jest": "27.0.5",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
@@ -123,6 +127,7 @@
   },
   "homepage": "https://github.com/morajlab/nodexe#readme",
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write --ignore-unknown",
+    "**/*.css": "stylelint"
   }
 }
