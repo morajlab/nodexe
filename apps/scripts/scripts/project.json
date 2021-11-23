@@ -27,9 +27,10 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/node:execute",
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "buildTarget": "scripts:build"
+        "commands": ["npx --no-install gulp"],
+        "parallel": false
       }
     },
     "lint": {

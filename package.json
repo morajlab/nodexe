@@ -9,10 +9,8 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "gulp": "gulp",
-    "format": "npm run format:css & npm run format:prettier",
-    "format:prettier": "prettier --write --ignore-unknown .",
-    "format:css": "stylelint **/*.css",
+    "format:prettier": "prettier --write --ignore-unknown",
+    "format:css": "stylelint",
     "prepare": "husky install"
   },
   "private": true,
@@ -127,7 +125,7 @@
   },
   "homepage": "https://github.com/morajlab/nodexe#readme",
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "**/*.css": "stylelint"
+    "**/*": "npm run format:prettier",
+    "**/*.css": "npm run format:css"
   }
 }
