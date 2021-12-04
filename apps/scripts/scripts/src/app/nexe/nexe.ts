@@ -1,5 +1,5 @@
 import { resolve, join } from "path";
-import { Console } from "@morajlab/vanilla.utils.console";
+import { Console } from "@morajlab/npm.vanilla.utils.console";
 import { compile as nexeCompile } from "nexe";
 import type { INexeProps } from "./nexe.types";
 

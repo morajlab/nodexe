@@ -1,6 +1,6 @@
 import yargs from "yargs/yargs";
 import { hideBin } from "yargs/helpers";
-import { Console } from "@morajlab/vanilla.utils.console";
+import { Console } from "@morajlab/npm.vanilla.utils.console";
 import type { ITaskProps } from "./cli.types";
 // import { scriptName } from "yargs";
 

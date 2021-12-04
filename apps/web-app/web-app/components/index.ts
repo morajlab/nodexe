@@ -1,4 +1,4 @@
-export { Bare } from "@morajlab/react.components.bare";
+export { Bare } from "@morajlab/npm.react.components.bare";
 export * from "./AppShell";
 export * from "./Dropzone";
 export * from "./Header";

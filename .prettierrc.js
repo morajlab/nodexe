@@ -1,3 +1,3 @@
 module.exports = {
-  ...require("@morajlab/config.prettier"),
+  ...require("@morajlab/npm.config.prettier"),
 };

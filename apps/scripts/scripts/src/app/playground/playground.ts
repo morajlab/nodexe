@@ -1,6 +1,6 @@
 import { execSync } from "child_process";
 import { resolve, join } from "path";
-import { Console } from "@morajlab/vanilla.utils.console";
+import { Console } from "@morajlab/npm.vanilla.utils.console";
 import del from "del";
 import type { IPlaygroundProps } from "./playground.types";
 

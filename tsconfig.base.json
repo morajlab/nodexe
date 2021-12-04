@@ -1,5 +1,5 @@
 {
-  "extends": "./node_modules/@morajlab/config.typescript/tsconfig.base.json",
+  "extends": "./node_modules/@morajlab/npm.config.typescript/tsconfig.base.json",
   "compilerOptions": {
     "resolveJsonModule": true,
     "paths": {

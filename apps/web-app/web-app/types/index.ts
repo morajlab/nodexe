@@ -1,5 +1,5 @@
-import type { IBareProps } from "@morajlab/react.components.bare";
-import type { MLComponent } from "@morajlab/react.types.common";
+import type { IBareProps } from "@morajlab/npm.react.components.bare";
+import type { MLComponent } from "@morajlab/npm.react.types.common";
 
 export interface INodexeBareProps extends IBareProps {}
 

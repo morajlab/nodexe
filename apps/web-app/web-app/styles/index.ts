@@ -1,1 +1,1 @@
-export * from "@morajlab/react.styles.common";
+export * from "@morajlab/npm.react.styles.common";
