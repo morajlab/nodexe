@@ -6,7 +6,7 @@
 
 An API to create platform-specific binaries from node.js modules
 
-> ⚠️ This IDE is under development and isn't ready for production.
+> ⚠️ This project is under development and isn't ready for production.
 
 > **Nodexe** currently uses [nexe](https://github.com/nexe/nexe) to compile node.js modules.
 
