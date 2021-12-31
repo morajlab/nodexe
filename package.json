@@ -9,7 +9,7 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "format:css": "stylelint",
+    "lint:css": "mjw lint --type style",
     "prepare": "mjw hooks install"
   },
   "private": true,
@@ -90,8 +90,6 @@
     "json": "^11.0.0",
     "react-test-renderer": "17.0.2",
     "sass": "1.43.2",
-    "stylelint": "^14.1.0",
-    "stylelint-config-standard": "^24.0.0",
     "ts-jest": "27.0.5",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
@@ -118,6 +116,6 @@
   "homepage": "https://github.com/morajlab/nodexe#readme",
   "lint-staged": {
     "**/*": "mjw format",
-    "**/*.css": "npm run format:css"
+    "**/*.css": "npm run lint:css"
   }
 }

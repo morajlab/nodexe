@@ -10,6 +10,24 @@ An API to create platform-specific binaries from node.js modules
 
 > **Nodexe** currently uses [nexe](https://github.com/nexe/nexe) to compile node.js modules.
 
+## Development
+
+For local development, first clone then repository:
+
+```sh
+git clone https://github.com/morajlab/nodexe.git
+```
+
+nodexe uses [mjw](https://github.com/morajlab/workspace.git) utility for workspace management. so you shoud install it.
+
+then run following commands in terminal:
+
+```sh
+cd nodexe
+
+yarn install
+```
+
 ## Maintainers
 
 [@morteza-jamali](https://github.com/morteza-jamali)
