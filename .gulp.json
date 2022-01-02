@@ -1,8 +1,0 @@
-{
-  "description": "Nodexe tasks",
-  "flags": {
-    "gulpfile": "./apps/scripts/scripts/src/gulpfile.ts",
-    "require": ["tsconfig-paths/register"],
-    "silent": true
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "extends": "./node_modules/@morajlab/npm.config.typescript/tsconfig.base.json",
-  "compilerOptions": {
-    "resolveJsonModule": true,
-    "paths": {
-      "@/apps/web-app/*": ["apps/web-app/web-app/*"]
-    }
-  }
-}
