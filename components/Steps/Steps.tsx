@@ -1,15 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Dropzone, Skeleton } from "@/components";
-import {
-  Stepper,
-  Button,
-  Group,
-  Input,
-  SimpleGrid,
-  Divider,
-} from "@mantine/core";
-import { Search } from "react-feather";
+import { Dropzone, Skeleton, SearchInput } from "@/components";
+import { Stepper, Button, Group, SimpleGrid, Divider } from "@mantine/core";
 import type { StepsComponent } from "./Steps.types";
 
 import styles from "./Steps.module.css";
@@ -34,11 +26,7 @@ export const Steps: StepsComponent = ({ ...rest }) => {
         <Stepper.Step label={t("step-1-label")} description={t("step-1-desc")}>
           <SimpleGrid cols={2} spacing="lg">
             <Group direction="column" grow={true}>
-              <Input
-                placeholder={t("input-package-name")}
-                type="text"
-                icon={<Search />}
-              />
+              <SearchInput />
               <Divider
                 my="xs"
                 label={t("or")}

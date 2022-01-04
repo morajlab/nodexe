@@ -2,13 +2,13 @@
 
 ![dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen)
 ![license](https://img.shields.io/badge/license-MIT-green)
-![version](https://img.shields.io/badge/version-v0.0.1--alpha-blue)
+![version](https://img.shields.io/badge/version-v0.0.2--alpha-blue)
 
 An API to create platform-specific binaries from node.js modules
 
 > ⚠️ This project is under development and isn't ready for production.
 
-> **Nodexe** currently uses [nexe](https://github.com/nexe/nexe) to compile node.js modules.
+> **Nodexe** currently uses [pkg](https://github.com/vercel/pkg) to compile node.js modules.
 
 ## Development
 

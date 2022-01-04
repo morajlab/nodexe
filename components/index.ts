@@ -3,5 +3,6 @@ export * from "./AppShell";
 export * from "./Dropzone";
 export * from "./Header";
 export * from "./Overview";
+export * from "./SearchInput";
 export * from "./Skeleton";
 export * from "./Steps";

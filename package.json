@@ -1,6 +1,6 @@
 {
   "name": "nodexe",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "license": "MIT",
   "description": "Create platform-specific binary from node.js modules",
   "author": "Morteza Jamali <mortezajamali4241@gmail.com> (https://moraj.ir)",
