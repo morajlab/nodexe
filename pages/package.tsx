@@ -2,11 +2,10 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dropzone, Skeleton, SearchInput } from "@/components";
 import { Stepper, Button, Group, SimpleGrid, Divider } from "@mantine/core";
-import type { StepsComponent } from "./Steps.types";
 
-import styles from "./Steps.module.css";
+import styles from "@/styles/Package.module.css";
 
-export const Steps: StepsComponent = ({ ...rest }) => {
+export const Package = () => {
   const { t } = useTranslation();
   const [active, setActive] = useState(0);
   const nextStep = () =>
@@ -15,13 +14,7 @@ export const Steps: StepsComponent = ({ ...rest }) => {
     setActive((current) => (current > 0 ? current - 1 : current));
 
   return (
-    <Group
-      direction="column"
-      noWrap={true}
-      grow={true}
-      className={styles.root}
-      {...rest}
-    >
+    <Group direction="column" noWrap={true} grow={true} className={styles.root}>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm">
         <Stepper.Step label={t("step-1-label")} description={t("step-1-desc")}>
           <SimpleGrid cols={2} spacing="lg">
@@ -58,4 +51,4 @@ export const Steps: StepsComponent = ({ ...rest }) => {
   );
 };
 
-export default Steps;
+export default Package;

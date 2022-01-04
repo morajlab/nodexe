@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { AppShell } from "@/components";
 import { MantineProvider, NormalizeCSS, GlobalStyles } from "@mantine/core";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
@@ -35,7 +36,9 @@ export const App = ({ Component, pageProps }: AppProps) => (
     >
       <NormalizeCSS />
       <GlobalStyles />
-      <Component {...pageProps} />
+      <AppShell>
+        <Component {...pageProps} />
+      </AppShell>
     </MantineProvider>
   </Fragment>
 );

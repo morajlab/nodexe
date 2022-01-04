@@ -21,7 +21,7 @@ export const Header: HeaderComponent = ({ ...rest }) => {
     <MantineHeader height={70} padding="md" {...rest}>
       <Group align="center" position="apart" noWrap={true}>
         <Group>
-          <Avatar src={null} alt={APP_NAME} color="blue" radius="xl">
+          <Avatar src={undefined} alt={APP_NAME} color="blue" radius="xl">
             {APP_NAME}
           </Avatar>
           <Text weight={700} transform="capitalize">

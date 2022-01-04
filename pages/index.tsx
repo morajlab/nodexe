@@ -1,14 +1,26 @@
-import React, { useState } from "react";
-import { AppShell, Overview, Steps } from "@/components";
+import { Button, Title, Text, Center, Group } from "@mantine/core";
+import { useTranslation } from "react-i18next";
 
 export const Index = () => {
-  const [view, setActiveView] = useState("overview");
+  const { t } = useTranslation();
 
   return (
-    <AppShell view={view}>
-      <Overview startOnClick={() => setActiveView("steps")} key="overview" />
-      <Steps key="steps" />
-    </AppShell>
+    <Center>
+      <Group direction="column">
+        <Text weight={700} transform="capitalize">
+          {t("nodexe")}
+        </Text>
+        <Title order={3}>{t("overview-title")}</Title>
+        <Button<"a">
+          component="a"
+          href="/package"
+          variant="gradient"
+          gradient={{ from: "teal", to: "blue", deg: 60 }}
+        >
+          Getting Started
+        </Button>
+      </Group>
+    </Center>
   );
 };
 

@@ -1,7 +1,7 @@
-import type { INodexeBareProps, NodexeComponent } from "@/types";
+import type { NodexeComponent } from "@/types";
+import type { AppShellProps } from "@mantine/core";
 
-export interface IAppShellProps extends INodexeBareProps {
-  view?: string;
-}
+export interface IAppShellProps
+  extends Omit<AppShellProps, "padding" | "header" | "className" | "styles"> {}
 
 export type AppShellComponent = NodexeComponent<IAppShellProps>;
