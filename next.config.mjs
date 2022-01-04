@@ -9,4 +9,8 @@ export default withTM([
   "@morajlab/npm.react.types.common",
 ])({
   reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 });

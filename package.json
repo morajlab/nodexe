@@ -12,7 +12,9 @@
     "start": "next start",
     "lint": "next lint",
     "lint:css": "mjw lint --type style",
-    "prepare": "mjw hooks install"
+    "prepare": "mjw hooks install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -32,14 +34,27 @@
     "react-i18next": "^11.15.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
     "@mantine/eslint-config": "^3.4.3",
     "@morajlab/npm.config.typescript": "0.0.1-alpha",
     "@morajlab/npm.react.types.common": "0.0.1-alpha",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-interactions": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
+    "@storybook/builder-webpack5": "^6.4.9",
+    "@storybook/manager-webpack5": "^6.5.0-alpha.6",
+    "@storybook/react": "^6.4.9",
     "@types/node": "17.0.6",
     "@types/react": "17.0.38",
+    "babel-loader": "^8.2.3",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.7",
-    "typescript": "4.5.4"
+    "eslint-plugin-storybook": "^0.5.5",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "4.5.4",
+    "webpack": "^5.65.0"
   },
   "repository": {
     "type": "git",
