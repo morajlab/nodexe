@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Dropzone, Skeleton } from "@/apps/web-app/components";
+import { Dropzone, Skeleton } from "@/components";
 import {
   Stepper,
   Button,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppShell, Overview, Steps } from "@/apps/web-app/components";
+import { AppShell, Overview, Steps } from "@/components";
 
 export const Index = () => {
   const [view, setActiveView] = useState("overview");

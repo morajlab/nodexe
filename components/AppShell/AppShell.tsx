@@ -1,6 +1,6 @@
 import { AppShell as MantineAppShell } from "@mantine/core";
-import { Header } from "@/apps/web-app/components";
-import { common } from "@/apps/web-app/styles";
+import { Header } from "@/components";
+import { common } from "@/styles";
 import type { AppShellComponent } from "./AppShell.types";
 
 import styles from "./AppShell.module.css";

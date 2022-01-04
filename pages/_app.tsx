@@ -4,9 +4,9 @@ import Head from "next/head";
 import { MantineProvider, NormalizeCSS, GlobalStyles } from "@mantine/core";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { resources } from "@/apps/web-app/i18n";
+import { resources } from "@/i18n";
 
-import "@/apps/web-app/styles/styles.css";
+import "@/styles/styles.css";
 
 i18n.use(initReactI18next).init({
   resources,

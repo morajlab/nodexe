@@ -1,4 +1,4 @@
-import type { NodexeComponent } from "@/apps/web-app/types";
+import type { NodexeComponent } from "@/types";
 
 export interface IDropzoneProps {}
 

@@ -1,4 +1,4 @@
-import type { INodexeBareProps, NodexeComponent } from "@/apps/web-app/types";
+import type { INodexeBareProps, NodexeComponent } from "@/types";
 
 export interface IStepsProps extends INodexeBareProps {}
 

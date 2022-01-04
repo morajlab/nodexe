@@ -1,4 +1,4 @@
-import { Bare } from "@/apps/web-app/components";
+import { Bare } from "@/components";
 import { Skeleton as MantineSkeleton, Center } from "@mantine/core";
 import { useTranslation } from "react-i18next";
 import type { SkeletonComponent } from "./Skeleton.types";
