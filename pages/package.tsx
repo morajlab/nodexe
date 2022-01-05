@@ -2,6 +2,11 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Dropzone, Skeleton, SearchInput } from "@/components";
 import { Stepper, Button, Group, SimpleGrid, Divider } from "@mantine/core";
+import {
+  Search as SearchIcon,
+  Package as PackageIcon,
+  Settings as SettingsIcon,
+} from "react-feather";
 
 import styles from "@/styles/Package.module.css";
 
@@ -16,7 +21,11 @@ export const Package = () => {
   return (
     <Group direction="column" noWrap={true} grow={true} className={styles.root}>
       <Stepper active={active} onStepClick={setActive} breakpoint="sm">
-        <Stepper.Step label={t("step-1-label")} description={t("step-1-desc")}>
+        <Stepper.Step
+          label={t("step-1-label")}
+          description={t("step-1-desc")}
+          icon={<SearchIcon />}
+        >
           <SimpleGrid cols={2} spacing="lg">
             <Group direction="column" grow={true}>
               <SearchInput />
@@ -31,10 +40,18 @@ export const Package = () => {
             <Skeleton />
           </SimpleGrid>
         </Stepper.Step>
-        <Stepper.Step label={t("step-2-label")} description={t("step-2-desc")}>
+        <Stepper.Step
+          label={t("step-2-label")}
+          description={t("step-2-desc")}
+          icon={<SettingsIcon />}
+        >
           Step 2 content: Verify email
         </Stepper.Step>
-        <Stepper.Step label={t("step-3-label")} description={t("step-3-desc")}>
+        <Stepper.Step
+          label={t("step-3-label")}
+          description={t("step-3-desc")}
+          icon={<PackageIcon />}
+        >
           Step 3 content: Get full access
         </Stepper.Step>
       </Stepper>

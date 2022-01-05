@@ -33,6 +33,8 @@ export const SearchInput: SearchInputComponent = ({ ...rest }) => {
   const { t } = useTranslation();
 
   const onSearchChangeHandler = async (name: string) => {
+    setData([]);
+
     if (name && name.trim().length > 0) {
       setCount(-1);
       const result = await searchPackage(name);
@@ -50,6 +52,10 @@ export const SearchInput: SearchInputComponent = ({ ...rest }) => {
     setCount(0);
   };
 
+  const onChangeHandler = (value: string) => {
+    console.log(value);
+  };
+
   return (
     <Select
       data={data}
@@ -63,6 +69,7 @@ export const SearchInput: SearchInputComponent = ({ ...rest }) => {
       }
       nothingFound="No options"
       onSearchChange={onSearchChangeHandler}
+      onChange={onChangeHandler}
       searchable
     />
   );
