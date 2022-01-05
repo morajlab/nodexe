@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { MantineProvider, NormalizeCSS, GlobalStyles } from "@mantine/core";
-import type { Parameters, DecoratorFn } from "@storybook/react";
+import type { DecoratorFn } from "@storybook/react";
 import { AppShell } from "../components";
 import { resources } from "../i18n";
 
@@ -31,13 +31,3 @@ export const decorators: DecoratorFn[] = [
     </MantineProvider>
   ),
 ];
-
-export const parameters: Parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-};
