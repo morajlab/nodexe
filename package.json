@@ -24,6 +24,7 @@
     "@mantine/next": "^3.4.3",
     "@morajlab/npm.react.components.bare": "0.0.1-alpha",
     "@morajlab/npm.react.styles.common": "0.0.1-alpha",
+    "@octokit/core": "^3.5.1",
     "i18next": "^21.6.4",
     "next": "12.0.7",
     "next-transpile-modules": "^9.0.0",
