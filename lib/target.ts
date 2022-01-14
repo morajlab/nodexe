@@ -1,12 +1,7 @@
 import { Octokit } from "@octokit/core";
+import type { INexeTarget } from "@/types";
 
-export interface IGetTargetsProps {
-  platform?: string;
-  arch?: string;
-  version?: string;
-}
-
-export const getTargets = async (props: IGetTargetsProps = {}) => {
+export const getTargets = async (props: INexeTarget = {}) => {
   const { data } = await new Octokit().request(
     "GET /repos/{owner}/{repo}/releases",
     {

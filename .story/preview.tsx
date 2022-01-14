@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { MantineProvider, NormalizeCSS, GlobalStyles } from "@mantine/core";
-import type { DecoratorFn } from "@storybook/react";
+import type { DecoratorFn, Parameters } from "@storybook/react";
 import { AppShell } from "../components";
 import { resources } from "../i18n";
 
@@ -16,18 +16,29 @@ i18n.use(initReactI18next).init({
   },
 });
 
-export const decorators: DecoratorFn[] = [
-  (Story) => (
-    <MantineProvider
-      theme={{
-        colorScheme: "dark",
-      }}
-    >
-      <NormalizeCSS />
-      <GlobalStyles />
-      <AppShell>
-        <Story />
-      </AppShell>
-    </MantineProvider>
-  ),
-];
+interface IMJWStoryPreviewProps {
+  decorators: DecoratorFn[];
+  parameters: Parameters;
+}
+
+export default (config: IMJWStoryPreviewProps): IMJWStoryPreviewProps => {
+  Object.assign(config, {
+    decorators: [
+      (Story) => (
+        <MantineProvider
+          theme={{
+            colorScheme: "dark",
+          }}
+        >
+          <NormalizeCSS />
+          <GlobalStyles />
+          <AppShell>
+            <Story />
+          </AppShell>
+        </MantineProvider>
+      ),
+    ] as IMJWStoryPreviewProps["decorators"],
+  });
+
+  return config;
+};

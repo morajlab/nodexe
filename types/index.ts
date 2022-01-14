@@ -4,3 +4,9 @@ import type { MLComponent } from "@morajlab/npm.react.types.common";
 export interface INodexeBareProps extends IBareProps {}
 
 export type NodexeComponent<T = {}> = MLComponent<T>;
+
+export interface INexeTarget {
+  platform?: string;
+  arch?: string;
+  version?: string;
+}
